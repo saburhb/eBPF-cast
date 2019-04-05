@@ -17,7 +17,7 @@ The details about the architecture and some preliminary results are presented in
 }
 ```
 
-If you want to test just the switching functionality using eBPF, see the code in eBPF-switch. The video processing with selective clone and forward is in the eBPF-clone-n-cast folder. The video transmission application can be setup with standard socket program (not incuded in this repository). Only rerequirement is that the video application uses deep packet inspaction (DPI) based on Transport Stream (TS) formatted video. If you convert a mpeg4/h.264 AVC video and encode it with TS (in .ts format), the DPI will work fine. However, this is just a framework provided for any virtual netowrk function or packet processing function to be implemented on top of it.
+If you want to test just the switching functionality using eBPF, see the code in eBPF-switch. The video processing with selective clone and forward is in the eBPF-clone-n-cast folder. The code is compiled with the examples of bcc from "iovisor" project (https://github.com/iovisor/bcc). The video transmission application can be setup with standard socket program (not incuded in this repository). Only rerequirement is that the video application uses deep packet inspaction (DPI) based on Transport Stream (TS) formatted video. If you convert a mpeg4/h.264 AVC video and encode it with TS (in .ts format), the DPI will work fine. However, this is just a framework provided for any virtual netowrk function or packet processing function to be implemented on top of it.
 
 
 ### To execute the program run the following:
