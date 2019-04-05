@@ -7,16 +7,16 @@ The shared hash table can be read in the bpf kernel space and bpf redirect will
 kick in. The bpf program then modifies the ioutgoing interface corresponding
 to the destination interface index mentioned in the shared MAP.
 
-## To execute the program run the following:
+### To execute the program run the following:
 ```
 python test_ebpf.py <interface 1> <interface 2>
 ```
 
-## Example:
+### Example:
 ```
 python test_ebpf.py enp3s0 virbr0
 ```
-## Output:
+### Output:
 
 ```
 Interface In 	 MAC address In 	 IP address In 	     Interface Out 	 MAC address Out 	 IP address Out
