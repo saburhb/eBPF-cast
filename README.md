@@ -50,6 +50,12 @@ python /home/envi/bcc/examples/networking/vid_clone/vid_clone.py v0 &
 <directory>/client <IP Address> <Port> <xxxxx.ts>
 ```
 
+#### Scalability test on light-weight network containers:
+ The code is written in the script cloneScale.sh. The name of the file paths need to be changed in the script and then run.
+```
+./cloneScale.sh
+```
+
 ## Limitations and work around:
 - Due to the limited instruction set the eBPF can execute, if the packet payload needs to be processed in full size, it needs to be done sequentially. So, in the code a loop is run sequentially on subsequent byte chunk of the payload.
 - Specific to the usecase, the packet filtering is optimized my selective the transport layer segment size to be exact multiple of 188 (188 byte is the size of a TS packet).
