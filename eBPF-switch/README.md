@@ -18,7 +18,9 @@ python test_ebpf.py enp3s0 virbr0
 ```
 # Output:
 
+```
 Interface In 	 MAC address In 	 IP address In 	     Interface Out 	 MAC address Out 	 IP address Out
 ------------ 	 -------------- 	 ------------- 	     ------------- 	 --------------- 	 --------------
 enp3s0 		 18:03:73:d4:4d:52 	 10.145.240.201 	virbr0 		 fe:54:00:7e:a3:41 	 192.168.122.1
 virbr0 		 fe:54:00:7e:a3:41 	 192.168.122.1 		enp3s0 		 18:03:73:d4:4d:52 	 10.145.240.201
+```
