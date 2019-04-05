@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HOME=/home/envi
+HOME=/home/envi  ### Change the folder as per folder name where bcc code is hosted
 NUM_CONT=$1
 
 # Remove all existing containers
@@ -26,7 +26,7 @@ do
 	echo $i
 	docker run -it -d --name cont$i ebpf_container_image
 	sudo $HOME/pipework/pipework --direct-phys veth2_$i cont$i 10.20.30.40/24 26:2e:71:98:60:8f
-	docker exec cont$i /share_sabur/cliserv/server 1234 &
+	docker exec cont$i /cliserv/server 1234 &   ### Change the folder where your client server program is located.
 	#j=$((($i) + 1))
 	#sudo $HOME/pipework/pipework --direct-phys veth1_$i cont0 10.20.10.$j/24
 	#docker exec cont0 ping -c 1 10.10.10.$j 
@@ -54,7 +54,7 @@ ip netns exec ns arp -s 10.20.30.40 26:2e:71:98:60:8f
 ### run the eBPF program
 #python /home/envi/bcc/examples/networking/vid_clone/vid_clone.py v0 &
 
-#ip netns exec ns /home/envi/Downloads/share_sabur/cliserv/client 10.20.30.40 1234 /home/envi/Downloads/uci_campus1.ts
+#ip netns exec ns /cliserv/client 10.20.30.40 1234 /home/envi/Downloads/uci_campus1.ts ### Change the folder cliserv accordingly
 
 
 
