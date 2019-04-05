@@ -19,3 +19,24 @@ The details about the architecture and some preliminary results are presented in
 
 If you want to test just the switching functionality using eBPF, see the code in eBPF-switch. The video processing with selective clone and forward is in the eBPF-clone-n-cast folder. The video transmission application can be setup with standard socket program (not incuded in this repository). Only rerequirement is that the video application uses deep packet inspaction (DPI) based on Transport Stream (TS) formatted video. If you convert a mpeg4/h.264 AVC video and encode it with TS (in .ts format), the DPI will work fine. However, this is just a framework provided for any virtual netowrk function or packet processing function to be implemented on top of it.
 
+
+### To execute the program run the following:
+```
+python test_ebpf.py <interface 1> <interface 2>
+```
+
+### Example:
+```
+python test_ebpf.py enp3s0 virbr0
+```
+### Output:
+
+```
+Interface In 	 MAC address In 	 IP address In 	     Interface Out 	 MAC address Out 	 IP address Out
+------------ 	 -------------- 	 ------------- 	     ------------- 	 --------------- 	 --------------
+enp3s0 		 18:03:73:d4:4d:52 	 10.145.240.201 	virbr0 		 fe:54:00:7e:a3:41 	 192.168.122.1
+virbr0 		 fe:54:00:7e:a3:41 	 192.168.122.1 		enp3s0 		 18:03:73:d4:4d:52 	 10.145.240.201
+```
+
+
+
