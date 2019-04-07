@@ -58,5 +58,5 @@ python /home/envi/bcc/examples/networking/vid_clone/vid_clone.py v0 &
 
 ## Limitations and work around:
 - Due to the limited instruction set the eBPF can execute, if the packet payload needs to be processed in full size, it needs to be done sequentially. So, in the code a loop is run sequentially on subsequent byte chunk of the payload.
-- Specific to the usecase, the packet filtering is optimized my selective the transport layer segment size to be exact multiple of 188 (188 byte is the size of a TS packet).
+- Specific to the video processing usecase, the packet filtering is optimized by selecting the transport layer segment size to be exact multiple of 188 bytes(188 byte is the size of a TS packet).
 
